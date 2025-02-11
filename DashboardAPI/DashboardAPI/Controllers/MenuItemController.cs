@@ -83,7 +83,7 @@ namespace DashboardAPI.Controllers
                     menuItem.subMenu = new List<MenuItem>();
                     foreach (var indexedMenuItem in indexedMenuItems)
                     { 
-                        if(indexedMenuItem.parentId.Equals(menuItem.Id))
+                        if(indexedMenuItem.parentId.Equals(menuItem.Id) && roles.Contains(indexedMenuItem.Id.ToString()))
                             menuItem.subMenu.Add(indexedMenuItem);
                     }
 
